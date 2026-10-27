@@ -21,7 +21,7 @@ The prerequisites for SIADS 681 include:
 
 #### Coding Assignment Breakdown
 
-Week 1 - 2 parts
-Week 2 - 4 parts
-Week 3 - 4 parts
-Week 4 - 3 parts
+- Week 1 - 2 parts
+- Week 2 - 4 parts
+- Week 3 - 4 parts
+- Week 4 - 3 parts
