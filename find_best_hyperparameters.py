@@ -30,10 +30,10 @@ def get_predictions(X_train,y_train,X_test,\
         class_weight="balanced"
     )
 
-    # train the model
+    # fit the model using training data
     model.fit(X_train, y_train)
 
-    # return predicted class labels
+    # return predicted binary stroke labels for evaluation
     return model.predict(X_test)
     pass
     
@@ -54,6 +54,8 @@ def get_predictions_prob(X_train,y_train,X_test,\
     Returns:
     Predicted class probability for samples in X_test.
     """
+    # train logistic regression and return predicted class probabilities
+
     # initialize logistic regression with balanced class weights
     model = LogisticRegression(
         C=C,
@@ -87,6 +89,10 @@ def get_predictions_threshold_label(X_train,y_train,X_test,\
     Returns:
     Predicted threshold class labels for samples in X_test.
     """
+
+    # extract predicted probabilities for the positive stroke class
+    # classify patients as positive when probability meets the threshold
+
     # initialize logistic regression with balanced class weights
     model = LogisticRegression(
         C=C,
@@ -122,6 +128,11 @@ def get_scores(X_train,y_train,X_test,y_test,metric, threshold=None,range_c=np.a
     Returns:
     score_dict (dict): A dictionary mapping choice of penalty and C with the calculated score.
     """
+
+    # calculate accuracy and f1 using predicted class labels
+    # calculate average precision using positive-class probabilities
+    # store evaluation scores for each hyperparameter combination
+
     # dictionary to store scores for each hyperparameter combination
     score_dict = {}
     
